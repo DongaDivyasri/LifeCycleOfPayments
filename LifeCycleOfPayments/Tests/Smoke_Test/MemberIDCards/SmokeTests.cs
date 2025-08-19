@@ -19,10 +19,10 @@ namespace MyPlaywrightPOC
         [Test, Category("Smoke")]
         public async Task S1_VerifyPageTitle()
         {
-           
-            await HighlightAsync(MemberIDCardPage.MemberIdcard_Title);
+
+            await AssertionHighlights.HighlightAsync(page, MemberIDCardPage.MemberIdcard_Title);
             await page.InnerTextAsync(MemberIDCardPage.MemberIdcard_Title);
-            await TakeScreenshotAsync();
+            await ScreenshotHelper.TakeScreenshotAsync(page);
             var titleText = await page.InnerTextAsync(MemberIDCardPage.MemberIdcard_Title);
             Assert.AreEqual("Member ID Cards", titleText, "Page title is incorrect");
         }
@@ -30,15 +30,15 @@ namespace MyPlaywrightPOC
         [Test, Category("Smoke")]
         public async Task S2_VerifyQuickSearchFields()
         {
-            await HighlightAsync(MemberIDCardPage.Recieptentname_Input);
+            await AssertionHighlights.HighlightAsync(page,MemberIDCardPage.Recieptentname_Input);
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.Recieptentname_Input));
-            await HighlightAsync(MemberIDCardPage.MemberID_Input);
+            
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.MemberID_Input));
-            await HighlightAsync(MemberIDCardPage.Status_Dropdown);
+            
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.Status_Dropdown));
-            await HighlightAsync(MemberIDCardPage.DocumentID_Input);
+          
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.DocumentID_Input));
-            await HighlightAsync(MemberIDCardPage.SearchButton);
+           
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.SearchButton));
             await ScreenshotHelper.TakeScreenshotAsync(page);
         }
@@ -46,7 +46,7 @@ namespace MyPlaywrightPOC
         [Test, Category("Smoke")]
         public async Task S3_VerifyFilterIconVisibilityAndClickability()
         {
-            await HighlightAsync(MemberIDCardPage.Filter_Icon);
+           
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.Filter_Icon));
             Assert.IsTrue(await page.IsEnabledAsync(MemberIDCardPage.Filter_Icon));
             await page.ClickAsync(MemberIDCardPage.Filter_Icon);
@@ -84,7 +84,7 @@ namespace MyPlaywrightPOC
                 .Where(exp => !actualStatuses.Any(act => act.Equals(exp, StringComparison.OrdinalIgnoreCase)))
                 .ToList();
 
-            await HighlightAsync(MemberIDCardPage.Status_Dropdown);
+          
             Assert.IsTrue(
                 !missing.Any(),
                 $"Dropdown missing expected statuses: {string.Join(", ", missing)}\n" +
