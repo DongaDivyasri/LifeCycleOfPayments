@@ -25,6 +25,7 @@ namespace MyPlaywrightPOC
             await ScreenshotHelper.TakeScreenshotAsync(page);
             var titleText = await page.InnerTextAsync(MemberIDCardPage.MemberIdcard_Title);
             Assert.AreEqual("Member ID Cards", titleText, "Page title is incorrect");
+            
         }
 
         [Test, Category("Smoke")]
