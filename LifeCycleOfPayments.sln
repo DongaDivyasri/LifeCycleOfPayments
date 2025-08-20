@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeCycleOfPayments", "LfeCycleOfPayments\LifeCycleOfPayments.csproj", "{5AD017AB-ED75-4A3F-8D33-D461DB4A0FC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeCycleOfPayments", "LifeCycleOfPayments\LifeCycleOfPayments.csproj", "{A69C354F-66F4-0C57-A916-DAB898783A7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5AD017AB-ED75-4A3F-8D33-D461DB4A0FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AD017AB-ED75-4A3F-8D33-D461DB4A0FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AD017AB-ED75-4A3F-8D33-D461DB4A0FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AD017AB-ED75-4A3F-8D33-D461DB4A0FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A69C354F-66F4-0C57-A916-DAB898783A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A69C354F-66F4-0C57-A916-DAB898783A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A69C354F-66F4-0C57-A916-DAB898783A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A69C354F-66F4-0C57-A916-DAB898783A7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

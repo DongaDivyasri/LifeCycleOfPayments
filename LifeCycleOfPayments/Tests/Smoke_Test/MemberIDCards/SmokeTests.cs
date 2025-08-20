@@ -17,7 +17,7 @@ namespace MyPlaywrightPOC
     {
 
         [Test, Category("Smoke")]
-        public async Task S1_VerifyPageTitle()
+        public async Task VerifyPageTitle()
         {
 
             await AssertionHighlights.HighlightAsync(page, MemberIDCardPage.MemberIdcard_Title);
@@ -28,7 +28,7 @@ namespace MyPlaywrightPOC
         }
 
         [Test, Category("Smoke")]
-        public async Task S2_VerifyQuickSearchFields()
+        public async Task VerifyQuickSearchFields()
         {
             await AssertionHighlights.HighlightAsync(page,MemberIDCardPage.Recieptentname_Input);
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.Recieptentname_Input));
@@ -44,7 +44,7 @@ namespace MyPlaywrightPOC
         }
 
         [Test, Category("Smoke")]
-        public async Task S3_VerifyFilterIconVisibilityAndClickability()
+        public async Task VerifyFilterIconVisibilityAndClickability()
         {
            
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.Filter_Icon));
@@ -55,10 +55,10 @@ namespace MyPlaywrightPOC
         }
 
 
-            [Category("PPD-3442")]
+        [Category("PPD-3442")]
 
         [Test, Category("Smoke")]
-        public async Task S4_VerifyDropdownRendersWithStatusesAndSelectAll()
+        public async Task VerifyDropdownRendersWithStatusesAndSelectAll()
         {
             await page.ClickAsync(MemberIDCardPage.Status_Dropdown);
             var dropdownPanel = page.Locator(MemberIDCardPage.Status_Options);
@@ -99,30 +99,7 @@ namespace MyPlaywrightPOC
 
 
 
-        //[Test, Category("Smoke")]
-        //public async Task S5_VerifySelectingSingleStatusMovesToSelectedSection()
-        //{
-        //    await page.ClickAsync(MemberIDCardPage.Status_Dropdown);
-
-        //    await page.ClickAsync(MemberIDCardPage.Status_preparing);
-        //    await Task.Delay(2000);
-
-        //    var selectedLocator = page.Locator("//div[contains(.,'Selected')]/following-sibling::div//li//span[normalize-space()='Preparing']");
-        //    await Assertions.Expect(selectedLocator).ToBeVisibleAsync();
-        //}
-
-        //    [Test, Category("Smoke")]
-        //    public async Task S6_VerifySelectAllMovesAllStatusesToSelectedSection()
-        //    {
-        //        await page.ClickAsync(StatusDropdownPage.Dropdown);
-        //        await page.CheckAsync(StatusDropdownPage.SelectAllCheckbox);
-
-        //        foreach (var status in new[] { "Received", "Sent", "Preparing", "Cancelled" })
-        //        {
-        //            Assert.IsTrue(await page.IsVisibleAsync(StatusDropdownPage.SelectedStatus(status)));
-        //        }
-        //    }
-
+        
 
     }
 }

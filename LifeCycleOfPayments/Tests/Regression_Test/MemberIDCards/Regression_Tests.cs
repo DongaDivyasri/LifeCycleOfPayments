@@ -13,14 +13,14 @@ namespace MyPlaywrightPOC
     {
 
         [Test, Category("Regression"), Category("PPD-145")]
-        public async Task R1_VerifyHelperTextBeforeSearch()
+        public async Task VerifyHelperTextBeforeSearch()
         {
             var helperText = await page.InnerTextAsync(MemberIDCardPage.Helper_Text);
             Assert.AreEqual("Please use at least one parameter to begin your search.", helperText);
         }
 
         [Test, Category("Regression")]
-        public async Task R2_VerifyEditParametersLink()
+        public async Task VerifyEditParametersLink()
         {
             Assert.IsTrue(await page.IsVisibleAsync(MemberIDCardPage.EditParameter));
             await page.ClickAsync(MemberIDCardPage.EditParameter);
@@ -30,7 +30,7 @@ namespace MyPlaywrightPOC
         }
 
         [Test, Category("Regression")]
-        public async Task R3_VerifyErrorMessageWhenSearchingWithoutParameters()
+        public async Task VerifyErrorMessageWhenSearchingWithoutParameters()
         {
             await page.ClickAsync(MemberIDCardPage.SearchButton);
             await Task.Delay(1000);
